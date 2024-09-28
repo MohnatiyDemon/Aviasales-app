@@ -1,4 +1,4 @@
-import classes from './App.module.scss'
+import styles from './App.module.scss'
 import Filter from './components/Filter/Filter'
 import Logo from './components/Logo/Logo'
 import ShowMoreTickets from './components/ShowMoreTickets/ShowMoreTickets'
@@ -7,11 +7,11 @@ import Ticket from './components/Ticket/Ticket'
 
 function App() {
   return (
-    <div className={classes.container}>
+    <div className={styles.container}>
       <Logo />
-      <main className={classes.main}>
+      <main className={styles.main}>
         <Filter />
-        <article className={classes.article}>
+        <article className={styles.article}>
           <Tabs />
           <Ticket />
           <Ticket />
