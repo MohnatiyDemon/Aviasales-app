@@ -1,0 +1,8 @@
+{
+  "routes": [
+    {
+      "src": "/assets/fonts/(.*)",
+      "dest": "/assets/fonts/$1"
+    }
+  ]
+}
