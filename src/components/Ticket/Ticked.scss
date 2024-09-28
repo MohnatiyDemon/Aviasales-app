@@ -1,0 +1,56 @@
+.Ticket {
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  width: 502px;
+  height: 184px;
+  padding: 26px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #4a4a4a;
+}
+
+.Ticket__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Ticket__price {
+  color: #2196f3;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.Ticket__info {
+  display: flex;
+  justify-items: center;
+  justify-content: space-between;
+}
+.Ticket__route {
+}
+.Ticket__cities {
+  color: #a0b0b9;
+}
+.Ticket__time {
+  font-weight: 500;
+}
+
+.Ticket__lenght {
+}
+.Ticket__way {
+  color: #a0b0b9;
+}
+.Ticket__time-lenght {
+  font-weight: 500;
+}
+
+.Ticket__stops {
+}
+.Ticket__stops-count {
+  color: #a0b0b9;
+}
+.Ticket__stops-cities {
+  font-weight: 500;
+}

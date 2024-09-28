@@ -1,0 +1,53 @@
+.Filter {
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  width: 232px;
+  height: 252px;
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  // margin: 0 auto;
+}
+
+.Filter__title {
+  font-weight: 600;
+  color: #4a4a4a;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 20px 20px 10px 20px;
+}
+
+.Filter__label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+}
+
+.Filter__label:hover {
+  background-color: #f1fcff;
+}
+
+.Filter__checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.Filter__option {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url('../../assets/checkboxs/CheckboxDisable.svg');
+  background-size: cover;
+  cursor: pointer;
+}
+
+.Filter__option--checked {
+  background-image: url('../../assets/checkboxs/CheckboxActive.svg');
+}
+
+.Filter__option:focus {
+  background-color: #f1fcff;
+}

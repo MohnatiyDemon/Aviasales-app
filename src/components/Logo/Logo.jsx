@@ -1,10 +1,10 @@
-import React from 'react'
-import { ReactComponent as AviaSalesLogo } from '../../assets/Logo.svg'
+import aviaSalesLogo from '../../assets/logos/Logo.svg'
+import './Logo.scss'
 
 const Logo = () => {
   return (
     <>
-      <AviaSalesLogo />
+      <img src={aviaSalesLogo} alt="Aviasales logo" className="Logo"></img>
     </>
   )
 }

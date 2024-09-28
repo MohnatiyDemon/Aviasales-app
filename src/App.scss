@@ -1,0 +1,20 @@
+$primary-background: #f3f7fa;
+
+html,
+body {
+  background-color: $primary-background;
+}
+.main {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.container {
+  padding: 50px;
+}
