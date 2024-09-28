@@ -1,16 +1,18 @@
-import './App.scss'
+import classes from './App.module.scss'
 import Filter from './components/Filter/Filter'
 import Logo from './components/Logo/Logo'
 import ShowMoreTickets from './components/ShowMoreTickets/ShowMoreTickets'
+import Tabs from './components/Tabs/Tabs'
 import Ticket from './components/Ticket/Ticket'
 
 function App() {
   return (
-    <div className="container">
+    <div className={classes.container}>
       <Logo />
-      <main className="main">
+      <main className={classes.main}>
         <Filter />
-        <article className="article">
+        <article className={classes.article}>
+          <Tabs />
           <Ticket />
           <Ticket />
           <Ticket />

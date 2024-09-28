@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import getCheckboxClass from '../../utils/getCheckboxClass'
-import './Filter.scss'
+import classes from './Filter.module.scss'
 
 const Filter = () => {
   const [selectedOptions, setSelectedOptions] = useState({
@@ -40,11 +40,11 @@ const Filter = () => {
   }
 
   return (
-    <aside className="Filter">
-      <h3 className="Filter__title">Количество пересадок</h3>
-      <label className="Filter__label">
+    <aside className={classes.Filter}>
+      <h3 className={classes['Filter__title']}>Количество пересадок</h3>
+      <label className={classes['Filter__label']}>
         <input
-          className="Filter__checkbox"
+          className={classes['Filter__checkbox']}
           type="checkbox"
           checked={selectedOptions.all}
           onChange={() => handleCheckboxChange('all')}
@@ -52,9 +52,9 @@ const Filter = () => {
         <span className={getCheckboxClass(selectedOptions.all)}></span>
         <span>Все</span>
       </label>
-      <label className="Filter__label">
+      <label className={classes['Filter__label']}>
         <input
-          className="Filter__checkbox"
+          className={classes['Filter__checkbox']}
           type="checkbox"
           checked={selectedOptions.noStops}
           onChange={() => handleCheckboxChange('noStops')}
@@ -62,9 +62,9 @@ const Filter = () => {
         <span className={getCheckboxClass(selectedOptions.noStops)}></span>
         <span>Без пересадок</span>
       </label>
-      <label className="Filter__label">
+      <label className={classes['Filter__label']}>
         <input
-          className="Filter__checkbox"
+          className={classes['Filter__checkbox']}
           type="checkbox"
           checked={selectedOptions.oneStop}
           onChange={() => handleCheckboxChange('oneStop')}
@@ -72,9 +72,9 @@ const Filter = () => {
         <span className={getCheckboxClass(selectedOptions.oneStop)}></span>
         <span>1 пересадка</span>
       </label>
-      <label className="Filter__label">
+      <label className={classes['Filter__label']}>
         <input
-          className="Filter__checkbox"
+          className={classes['Filter__checkbox']}
           type="checkbox"
           checked={selectedOptions.twoStops}
           onChange={() => handleCheckboxChange('twoStops')}
@@ -82,9 +82,9 @@ const Filter = () => {
         <span className={getCheckboxClass(selectedOptions.twoStops)}></span>
         <span>2 пересадки</span>
       </label>
-      <label className="Filter__label">
+      <label className={classes['Filter__label']}>
         <input
-          className="Filter__checkbox"
+          className={classes['Filter__checkbox']}
           type="checkbox"
           checked={selectedOptions.threeStops}
           onChange={() => handleCheckboxChange('threeStops')}

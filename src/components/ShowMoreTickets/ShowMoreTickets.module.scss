@@ -5,4 +5,8 @@
   height: 50px;
   border-radius: 5px;
   text-transform: uppercase;
+  &:hover {
+    background-color: #008cff;
+    color: #f4efef;
+  }
 }
