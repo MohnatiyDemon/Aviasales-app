@@ -1,11 +1,11 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
+import { fetchTickets } from './api/ticketApi'
 import styles from './App.module.scss'
 import Filter from './components/Filter/Filter'
 import Logo from './components/Logo/Logo'
 import Tabs from './components/Tabs/Tabs'
 import TicketsList from './components/TicketList/TicketList'
-import { fetchTickets } from './store/ticketsSlice'
 
 function App() {
   const dispatch = useDispatch()

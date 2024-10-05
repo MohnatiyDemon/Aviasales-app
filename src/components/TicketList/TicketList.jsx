@@ -1,4 +1,4 @@
-import { Empty } from 'antd'
+import { Empty, Spin } from 'antd'
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { v4 as uuid4 } from 'uuid'
@@ -9,6 +9,8 @@ const TicketsList = () => {
   const filter = useSelector((state) => state.filter)
   const activeTab = useSelector((state) => state.tabs)
   const tickets = useSelector((state) => state.tickets.items)
+  const status = useSelector((state) => state.tickets.status)
+
   const [visibleTicketsCount, setVisibleTicketsCount] = useState(5)
 
   const filteredTickets = Array.isArray(tickets)
@@ -42,9 +44,11 @@ const TicketsList = () => {
 
   if (!filteredTickets.length) {
     return (
-      <div className={styles.TicketList__empty}>
-        <Empty description="Пожалуйста, выберите фильтры для отображения билетов" />
-      </div>
+      <Spin tip="Получение билетов" size="large">
+        <div className={styles.TicketList__empty}>
+          <Empty description="Пожалуйста, выберите фильтры для отображения билетов" />
+        </div>
+      </Spin>
     )
   }
 
