@@ -1,3 +1,4 @@
+import { Empty } from 'antd'
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { v4 as uuid4 } from 'uuid'
@@ -38,6 +39,14 @@ const TicketsList = () => {
     return 0
   })
   const visibleTickets = sortedTickets.slice(0, visibleTicketsCount)
+
+  if (!filteredTickets.length) {
+    return (
+      <div className={styles.TicketList__empty}>
+        <Empty description="Пожалуйста, выберите фильтры для отображения билетов" />
+      </div>
+    )
+  }
 
   return (
     <div className={styles.TicketsList}>
