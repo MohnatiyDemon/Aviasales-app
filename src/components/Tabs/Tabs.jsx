@@ -1,11 +1,14 @@
-import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { setActiveTab } from '../../store/tabsSlice'
 import styles from './Tabs.module.scss'
 
 const Tabs = () => {
-  const [activeTab, setActiveTab] = useState('cheapest')
+  const dispatch = useDispatch()
+  const activeTab = useSelector((state) => state.tabs)
 
-  const handleTabClick = (tab) => [setActiveTab(tab)]
-
+  const handleTabClick = (tab) => {
+    dispatch(setActiveTab(tab))
+  }
   return (
     <div className={styles.Tabs}>
       <button
