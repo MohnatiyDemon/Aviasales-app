@@ -2,9 +2,9 @@
   background-color: #ffffff;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  width: 502px;
-  height: 184px;
-  padding: 26px 20px;
+  width: 100%;
+  max-width: 502px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -15,32 +15,62 @@
     justify-content: space-between;
     align-items: center;
   }
+
   &__price {
     color: #2196f3;
     font-size: 24px;
     font-weight: 500;
   }
+
   &__info {
     display: flex;
-    justify-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
   }
+
+  &__segment {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__route,
+  &__length,
+  &__stops {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
   &__cities {
     color: #a0b0b9;
   }
+
   &__time {
     font-weight: 500;
   }
+
   &__way {
     color: #a0b0b9;
+    text-transform: uppercase;
   }
-  &__time-lenght {
+
+  &__timeLength {
     font-weight: 500;
   }
+
   &__stops-count {
     color: #a0b0b9;
+    text-transform: uppercase;
   }
+
   &__stops-cities {
     font-weight: 500;
+  }
+
+  &__logo {
+    height: 36px;
+    width: 99px;
   }
 }

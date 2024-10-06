@@ -1,11 +1,19 @@
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { fetchTickets } from './api/ticketApi'
 import styles from './App.module.scss'
 import Filter from './components/Filter/Filter'
 import Logo from './components/Logo/Logo'
-import ShowMoreTickets from './components/ShowMoreTickets/ShowMoreTickets'
 import Tabs from './components/Tabs/Tabs'
-import Ticket from './components/Ticket/Ticket'
+import TicketsList from './components/TicketList/TicketList'
 
 function App() {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(fetchTickets())
+  }, [dispatch])
+
   return (
     <div className={styles.container}>
       <Logo />
@@ -13,12 +21,7 @@ function App() {
         <Filter />
         <article className={styles.article}>
           <Tabs />
-          <Ticket />
-          <Ticket />
-          <Ticket />
-          <Ticket />
-          <Ticket />
-          <ShowMoreTickets />
+          <TicketsList />
         </article>
       </main>
     </div>

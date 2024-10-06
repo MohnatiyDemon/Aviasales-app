@@ -1,3 +1,8 @@
+.TicketsList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 .ShowMoreTickets {
   color: #ffffff;
   background-color: #2196f3;
