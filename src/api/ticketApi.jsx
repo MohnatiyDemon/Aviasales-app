@@ -19,20 +19,12 @@ const fetchTicketsBatch = async (searchId) => {
 }
 
 export const fetchTickets = createAsyncThunk('tickets/fetchTickets', async (_, { dispatch }) => {
-  try {
-    const searchId = await fetchSearchId()
-    let stop = false
+  const searchId = await fetchSearchId()
+  let stop = false
 
-    while (!stop) {
-      try {
-        const { tickets, stop: batchStop } = await fetchTicketsBatch(searchId)
-        dispatch(addTickets(tickets))
-        stop = batchStop
-      } catch {
-        await new Promise((resolve) => setTimeout(resolve, 100))
-      }
-    }
-  } catch (error) {
-    throw error
+  while (!stop) {
+    const { tickets, stop: batchStop } = await fetchTicketsBatch(searchId)
+    dispatch(addTickets(tickets))
+    stop = batchStop
   }
 })
