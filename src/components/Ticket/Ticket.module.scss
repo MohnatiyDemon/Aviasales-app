@@ -31,7 +31,6 @@
   &__segment {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
   }
 
   &__route,
@@ -39,8 +38,7 @@
   &__stops {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+    align-items: center;
   }
 
   &__cities {
