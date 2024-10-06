@@ -1,3 +1,4 @@
+import { formatDuration, formatTime } from '../../utils/formatTime'
 import styles from './Ticket.module.scss'
 
 const Ticket = ({ data }) => {
@@ -6,17 +7,6 @@ const Ticket = ({ data }) => {
   const logoUrl = `https://pics.avs.io/99/36/${carrier}.png`
 
   const [outboundSegment, returnSegment] = segments
-
-  const formatTime = (dateString) => {
-    const date = new Date(dateString)
-    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-  }
-
-  const formatDuration = (minutes) => {
-    const hours = Math.floor(minutes / 60)
-    const mins = minutes % 60
-    return `${hours}ч ${mins}м`
-  }
 
   const stopsInfo = (stops) => {
     if (stops.length === 0) return ' '
@@ -27,6 +17,7 @@ const Ticket = ({ data }) => {
     if (stops.length === 0) return '0 пересадок'
     return `${stops.length} ${stops.length === 1 ? 'пересадка' : 'пересадки'}`
   }
+
   return (
     <section className={styles.Ticket}>
       <div className={styles.Ticket__header}>

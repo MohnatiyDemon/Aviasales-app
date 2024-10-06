@@ -2,4 +2,8 @@
   display: block;
   margin: 0 auto 50px;
   cursor: pointer;
+  transition: transform 0.5s ease;
+  &:hover {
+    transform: scale(1.05);
+  }
 }
