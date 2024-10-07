@@ -23,8 +23,10 @@ export const fetchTickets = createAsyncThunk('tickets/fetchTickets', async (_, {
   let stop = false
 
   while (!stop) {
-    const { tickets, stop: batchStop } = await fetchTicketsBatch(searchId)
-    dispatch(addTickets(tickets))
-    stop = batchStop
+    try {
+      const { tickets, stop: batchStop } = await fetchTicketsBatch(searchId)
+      dispatch(addTickets(tickets))
+      stop = batchStop
+    } catch {}
   }
 })
