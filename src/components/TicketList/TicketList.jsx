@@ -1,7 +1,7 @@
 import { Empty, Spin } from 'antd'
 import { useMemo, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { v4 as uuid4 } from 'uuid'
+import { generateUniqKey } from '../../utils/generateUniqKey'
 import Ticket from '../Ticket/Ticket'
 import styles from './TicketList.module.scss'
 
@@ -67,7 +67,7 @@ const TicketsList = () => {
       ) : (
         <>
           {visibleTickets.map((ticket) => (
-            <Ticket key={uuid4()} data={ticket} />
+            <Ticket key={generateUniqKey(ticket)} data={ticket} />
           ))}
           {visibleTicketsCount < sortedTickets.length && (
             <button className={styles.ShowMoreTickets} onClick={() => setVisibleTicketsCount((count) => count + 5)}>
