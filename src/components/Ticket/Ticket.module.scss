@@ -25,23 +25,20 @@
     font-weight: 500;
   }
 
-  &__info {
+  &__row {
     display: flex;
     flex-direction: column;
     gap: 10px;
-  }
-
-  &__segment {
-    display: flex;
     justify-content: space-between;
   }
-
-  &__route,
-  &__length,
-  &__stops {
+  &__column {
     display: flex;
     flex-direction: column;
-    align-items: start;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
   }
 
   &__cities {
