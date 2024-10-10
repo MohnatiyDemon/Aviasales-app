@@ -7,7 +7,12 @@ const URL = 'https://aviasales-test-api.kata.academy'
 const fetchSearchId = async () => {
   const response = await fetch(`${URL}/search`)
   if (!response.ok) {
-    throw new Error('Ошибка при загрузке searchId')
+    if (response.status < 500) {
+      throw new Error('Ошибка при загрузке searchId')
+    }
+    const error = new Error('Ошибка сервера при загрузке searchId')
+    error.response = response
+    throw error
   }
   const data = await response.json()
   return data.searchId
@@ -24,7 +29,15 @@ const fetchTicketsBatch = async (searchId) => {
 }
 
 export const fetchTickets = createAsyncThunk('tickets/fetchTickets', async (_, { dispatch }) => {
-  const searchId = await fetchSearchId()
+  let searchId
+  try {
+    searchId = await fetchSearchId()  
+  } catch (error) {
+    if (error.response?.status < 500) {
+      notificationError('Произошла непредвиденная ошибка при получении searchId') 
+      return
+    }
+  }
   let stop = false
 
   while (!stop) {
@@ -37,6 +50,7 @@ export const fetchTickets = createAsyncThunk('tickets/fetchTickets', async (_, {
         continue
       } else {
         notificationError('Произошла непредвиденная ошибка')
+        return
       }
     }
   }
