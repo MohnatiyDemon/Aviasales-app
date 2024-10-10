@@ -10,6 +10,10 @@
   @media (max-width: 768px) {
     margin: 0 auto;
   }
+  @media (max-width: 822px) {
+    height: 100%;
+    max-height: 400px;
+  }
   &__title {
     font-weight: 600;
     color: #4a4a4a;
