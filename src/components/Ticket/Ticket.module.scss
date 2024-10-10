@@ -12,6 +12,9 @@
   @media (max-width: 768px) {
     min-width: 350px;
   }
+  @media (max-width: 350px) {
+    min-width: 100%;
+  }
 
   &__header {
     display: flex;
@@ -31,6 +34,7 @@
     gap: 10px;
     justify-content: space-between;
   }
+
   &__column {
     display: flex;
     flex-direction: column;
@@ -39,6 +43,7 @@
   &__info {
     display: flex;
     justify-content: space-between;
+    gap: 10px;
   }
 
   &__cities {

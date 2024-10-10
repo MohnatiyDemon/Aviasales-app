@@ -23,4 +23,10 @@ body {
 }
 .container {
   padding: 50px;
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
+  @media (max-width: 380px) {
+    padding: 0;
+  }
 }
